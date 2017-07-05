@@ -8,15 +8,32 @@
 
 def nextDay(year, month, day):
     """Simple version: assume every month has 30 days"""
-    if day < 30:
-        return year, month, day + 1
-    else:
-        if month == 12:
-            return year + 1, 1, 1
+    if(month==1 or month==3 or month==5 or month==7 or month==8 or month==10):
+        if day < 31:
+            return year, month, day + 1
         else:
             return year, month + 1, 1
+    elif(month == 4 or month==6 or month==9 or month==11):
+        if day < 30:
+            return year, month, day+1
+        else:
+            return year, month + 1, 1
+    elif(month==12):
+        if day<31:
+            return year,month,day+1
+        else:
+            return year+1,1,1
+    elif(month==2):
+        if day<29 and year%4==0:
+            return year,month,day+1
+        elif day<28 and not year%4==0:
+            return year,month,day+1
+        else:
+            return year,month+1,1
             
 def dateIsBefore(year1, month1, day1, year2, month2, day2):
+    """Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False."""
+    
     if year1<year2:
         return True
     elif year1==year2 and month1<month2:
@@ -50,7 +67,8 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
 def test():
     test_cases = [((2012,9,30,2012,10,30),30), 
                   ((2012,1,1,2013,1,1),360),
-                  ((2012,9,1,2012,9,4),3)]
+                  ((2012,9,1,2012,9,4),3),
+                  ((1900,1,1,1999,12,31), 36523)]
     
     for (args, answer) in test_cases:
         result = daysBetweenDates(*args)
