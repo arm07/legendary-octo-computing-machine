@@ -20,3 +20,15 @@ public static void main(String[] args){
 	}
 }
 }
+/*
+OUTPUT
+java StringBuilderClass Test null Test 1 2 3 test
+Test null Test 1 2 3 test
+Exception in thread "main" java.util.InputMismatchException
+        at java.util.Scanner.throwFor(Unknown Source)
+        at java.util.Scanner.next(Unknown Source)
+        at java.util.Scanner.nextInt(Unknown Source)
+        at java.util.Scanner.nextInt(Unknown Source)
+        at StringBuilderClass.main(StringBuilderClass.java:17)
+		
+		*/

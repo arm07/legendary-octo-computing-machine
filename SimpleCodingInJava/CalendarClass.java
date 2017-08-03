@@ -18,3 +18,8 @@ System.out.println("" + cal.get(Calendar.DATE) +"-"+ cal.get(Calendar.MONTH)+ "-
 
 }
 }
+
+/* Output
+30-2-2000
+28-1-2001
+*/

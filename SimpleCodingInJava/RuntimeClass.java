@@ -13,3 +13,11 @@ System.out.println("free JVM Heap Size" +Runtime.getRuntime().freeMemory());
 
 }
 }
+
+/* Output
+
+Current JVM heap size191365120
+max JVM Heap Size2833776640
+free JVM Heap Size189351816
+
+*/
